@@ -1,5 +1,5 @@
 import { cn } from "@/shared/utils/cn"
-import { today } from "../utils/apod.utils"
+import { today } from "@/shared/utils/date.utils"
 
 interface ApodFiltersProps {
     startDate: string

@@ -5,7 +5,7 @@ import { ApodModal } from './components/ApodModal'
 import { PageSkeleton } from '@/shared/components/ui/PageSkeleton'
 import { useDebounce } from '@/shared/hooks/useDebounce'
 import type { ApodItem } from './schemas/apod.schema'
-import { sevenDaysAgo, today } from './utils/apod.utils'
+import { sevenDaysAgo, today } from '../../shared/utils/date.utils'
 import { ApodFilters } from './components/ApodFilters'
 
 export default function ApodPage() {
