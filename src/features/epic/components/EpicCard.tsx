@@ -18,7 +18,7 @@ export function EpicCard({ image }: EpicCardProps) {
         <article className={cn(
             'overflow-hidden rounded-xl bg-slate-900',
             'border border-slate-800 transition-all duration-300',
-            'hover:border-orange-500/50 hover:shadow-lg hover:shadow-orange-500/10',
+            'hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10',
         )}>
             <div className="relative aspect-square overflow-hidden bg-slate-800">
                 {imgError ? (

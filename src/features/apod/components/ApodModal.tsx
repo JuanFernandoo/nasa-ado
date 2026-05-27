@@ -53,16 +53,16 @@ export function ApodModal({ item, onClose }: ApodModalProps) {
 
       <div className={cn(
         'relative z-10 max-h-[90vh] w-full max-w-4xl overflow-y-auto',
-        'rounded-2xl bg-slate-900 shadow-2xl',
+        'rounded-2xl bg-space-900shadow-2xl',
         'border border-slate-700',
       )}>
         <button
           ref={closeBtnRef}
           onClick={onClose}
           className={cn(
-            'absolute right-4 top-4 z-10 rounded-full bg-slate-800 p-2',
-            'text-slate-400 hover:bg-slate-700 hover:text-white',
-            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500',
+            'absolute right-4 top-4 z-10 rounded-full bg-space-800p-2',
+            'text-slate-400 hover:bg-space-700hover:text-white',
+            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent',
             'transition-colors',
           )}
           aria-label="Cerrar modal"

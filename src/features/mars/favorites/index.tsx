@@ -42,7 +42,7 @@ export default function FavoritesPage() {
                     </p>
                     <Link
                         to="/mars"
-                        className="mt-2 rounded-lg bg-orange-500 px-6 py-2 text-sm font-medium text-white hover:bg-orange-600"
+                        className="mt-2 rounded-lg bg-accent px-6 py-2 text-sm font-medium text-white hover:bg-accent-hover"
                     >
                         Explora marte
                     </Link>

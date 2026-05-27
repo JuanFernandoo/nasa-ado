@@ -53,7 +53,7 @@ export default function StencilDemoPage() {
     return (
         <div>
             <div className="mb-8">
-                <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1">
+                <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3 py-1">
                     <span className="text-xs font-medium text-orange-400">
                         Web Components con Stencil.js
                     </span>
@@ -65,7 +65,7 @@ export default function StencilDemoPage() {
             </div>
 
             {lastEvent && (
-                <div className="mb-8 rounded-lg border border-slate-700 bg-slate-900 p-4">
+                <div className="mb-8 rounded-lg border border-slate-700 bg-space-900p-4">
                     <p className="text-xs text-slate-500">Último evento recibido por React:</p>
                     <p className="mt-1 font-mono text-sm text-orange-400">{lastEvent}</p>
                 </div>
@@ -73,7 +73,7 @@ export default function StencilDemoPage() {
 
             <section className="mb-12">
                 <h2 className="mb-2 text-xl font-semibold text-white">
-                    <code className="rounded bg-slate-800 px-2 py-1 text-sm text-orange-400">
+                    <code className="rounded bg-space-800px-2 py-1 text-sm text-orange-400">
                         {'<apod-card>'}
                     </code>
                 </h2>
@@ -92,7 +92,7 @@ export default function StencilDemoPage() {
 
             <section className="mb-12">
                 <h2 className="mb-2 text-xl font-semibold text-white">
-                    <code className="rounded bg-slate-800 px-2 py-1 text-sm text-orange-400">
+                    <code className="rounded bg-space-800px-2 py-1 text-sm text-orange-400">
                         {'<neo-badge>'}
                     </code>
                 </h2>
@@ -106,7 +106,7 @@ export default function StencilDemoPage() {
 
             <section className="mb-12">
                 <h2 className="mb-2 text-xl font-semibold text-white">
-                    <code className="rounded bg-slate-800 px-2 py-1 text-sm text-orange-400">
+                    <code className="rounded bg-space-800px-2 py-1 text-sm text-orange-400">
                         {'<mars-photo-card>'}
                     </code>
                 </h2>

@@ -82,7 +82,7 @@ export default function NeoPage() {
             {!isLoading && !isError && data && (
                 <>
                     <div className="mb-6 flex gap-4">
-                        <div className="rounded-lg border border-slate-800 bg-slate-900 px-4 py-3">
+                        <div className="rounded-lg border border-slate-800 bg-space-900px-4 py-3">
                             <p className="text-xs text-slate-500">Total</p>
                             <p className="text-2xl font-bold text-white">{String(data.length)}</p>
                         </div>

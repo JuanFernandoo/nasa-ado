@@ -45,8 +45,8 @@ export default function MarsPage() {
                     className={cn(
                         'flex items-center gap-2 rounded-lg border border-slate-700 px-4 py-2',
                         'text-sm font-medium text-slate-300 transition-colors',
-                        'hover:border-orange-500 hover:text-orange-400',
-                        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500',
+                        'hover:border-accent hover:text-orange-400',
+                        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent',
                     )}
                     aria-label={`Ver ${String(favoritesCount)} favoritos`}
                 >

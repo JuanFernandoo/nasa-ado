@@ -60,7 +60,7 @@ export function AsteroidTable({ asteroids, sortField, sortDirection, onSort }: A
                                     onClick={() => { onSort(key) }}
                                     className={cn(
                                         'flex items-center gap-1 transition-colors hover:text-white',
-                                        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded',
+                                        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded',
                                         sortField === key && 'text-orange-400',
                                     )}
                                     aria-label={`Ordenar por  ${label}`}
@@ -121,7 +121,7 @@ export function AsteroidTable({ asteroids, sortField, sortDirection, onSort }: A
                                     rel="noopener noreferrer"
                                     className={cn(
                                         'text-xs text-orange-400 hover:text-orange-300 underline',
-                                        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded',
+                                        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded',
                                     )}
                                     aria-label={`Detalles NASA de  ${asteroid.name}`}
                                 >

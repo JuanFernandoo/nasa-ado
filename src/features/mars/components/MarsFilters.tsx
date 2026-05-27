@@ -11,7 +11,7 @@ interface MarsFiltersProps {
 const inputClass = cn(
     'w-full rounded-lg border border-slate-700 bg-slate-900',
     'px-3 py-2 text-sm text-slate-100',
-    'focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500',
+    'focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent',
     'transition-colors',
 )
 
@@ -67,10 +67,10 @@ export function MarsFilters({ filters, onChange }: MarsFiltersProps) {
                                 onClick={() => { onChange('dateMode', mode) }}
                                 className={cn(
                                     'flex-1 py-2 text-sm font-medium transition-colors',
-                                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500',
+                                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent',
                                     filters.dateMode === mode
-                                        ? 'bg-orange-500 text-white'
-                                        : 'bg-slate-900 text-slate-400 hover:bg-slate-800',
+                                        ? 'bg-accent text-white'
+                                        : 'bg-space-900text-slate-400 hover:bg-slate-800',
                                 )}
                                 aria-pressed={filters.dateMode === mode}
                             >

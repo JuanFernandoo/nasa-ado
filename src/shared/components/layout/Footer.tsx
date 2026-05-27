@@ -3,7 +3,7 @@ import { Mail, Phone } from 'lucide-react'
 
 export function Footer() {
     return (
-        <footer className="mt-auto border-t border-slate-800 bg-slate-950 py-6">
+        <footer className="mt-auto border-t border-slate-800 bg-space-950 py-6">
             <div className="mx-auto max-w-7xl px-4">
                 <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
 

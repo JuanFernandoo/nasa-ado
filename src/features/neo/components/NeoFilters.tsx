@@ -11,7 +11,7 @@ interface NeoFiltersProps {
 const inputClass = cn(
     'w-full rounded-lg border border-slate-700 bg-slate-900',
     'px-3 py-2 text-sm text-slate-100',
-    'focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500',
+    'focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent',
     'transition-colors',
 )
 
@@ -84,10 +84,10 @@ export function NeoFilters({ filters, onChange }: NeoFiltersProps) {
                                 aria-pressed={filters.sortDirection === dir}
                                 className={cn(
                                     'flex-1 py-2 text-sm font-medium transition-colors',
-                                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500',
+                                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent',
                                     filters.sortDirection === dir
-                                        ? 'bg-orange-500 text-white'
-                                        : 'bg-slate-900 text-slate-400 hover:bg-slate-800',
+                                        ? 'bg-accent text-white'
+                                        : 'bg-space-900text-slate-400 hover:bg-slate-800',
                                 )}
                             >
                                 {dir === 'asc'
@@ -104,7 +104,7 @@ export function NeoFilters({ filters, onChange }: NeoFiltersProps) {
                     type="checkbox"
                     checked={filters.onlyHazardous}
                     onChange={(e) => { onChange('onlyHazardous', e.target.checked) }}
-                    className="h-4 w-4 rounded border-slate-600 bg-slate-900 accent-orange-500"
+                    className="h-4 w-4 rounded border-slate-600 bg-space-900accent-accent"
                 />
                 <span className="text-sm text-slate-300">
                     Mostrar solo potencialmente peligrosos

@@ -21,10 +21,10 @@ export function ApodCard({ item, onClick }: ApodCardProps) {
     return (
         <button
             className={cn(
-                'group relative w-full overflow-hidden rounded-xl bg-slate-900 text-left',
+                'group relative w-full overflow-hidden rounded-xl bg-space-900text-left',
                 'border border-slate-800 transition-all duration-300',
-                'hover:border-orange-500/50 hover:shadow-lg hover:shadow-orange-500/10',
-                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500',
+                'hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10',
+                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent',
             )}
             onClick={() => { onClick(item) }}
             aria-label={`Ver detalles de ${item.title}`}
@@ -50,7 +50,7 @@ export function ApodCard({ item, onClick }: ApodCardProps) {
 
                 {item.media_type === 'video' && (
                     <span
-                        className="absolute right-2 top-2 rounded-full bg-orange-500 px-2 py-0.5 text-xs font-bold text-white"
+                        className="absolute right-2 top-2 rounded-full bg-accent px-2 py-0.5 text-xs font-bold text-white"
                         aria-label="Contenido de video"
                     >
                         VIDEO

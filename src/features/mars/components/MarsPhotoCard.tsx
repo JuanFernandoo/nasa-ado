@@ -25,7 +25,7 @@ export function MarsPhotoCard({ photo }: MarsPhotoCardProps) {
         <article className={cn(
             'group relative overflow-hidden rounded-xl bg-slate-900',
             'border border-slate-800 transition-all duration-300',
-            'hover:border-orange-500/50 hover:shadow-lg hover:shadow-orange-500/10',
+            'hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10',
         )}>
             <div className="relative aspect-square overflow-hidden bg-slate-800">
                 {imgError ? (
@@ -48,10 +48,10 @@ export function MarsPhotoCard({ photo }: MarsPhotoCardProps) {
                     onClick={toggleFavorite}
                     className={cn(
                         'absolute right-2 top-2 rounded-full p-2 transition-all',
-                        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500',
+                        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent',
                         favorited
-                            ? 'bg-orange-500 text-white'
-                            : 'bg-slate-900/80 text-slate-400 hover:bg-slate-800 hover:text-orange-400',
+                            ? 'bg-accent text-white'
+                            : 'bg-slate-900/80 text-slate-400 hover:bg-space-800hover:text-orange-400',
                     )}
                     aria-label={favorited ? 'Quitar de favoritos' : 'Agregar a favoritos'}
                     aria-pressed={favorited}
