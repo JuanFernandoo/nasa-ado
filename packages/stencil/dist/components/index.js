@@ -1,1 +1,1 @@
-export{g as getAssetPath,r as render,s as setAssetPath,a as setNonce,b as setPlatformOptions}from"./p-DeL_ilRu.js";function t(s,t,e){return(s||"")+(t?" "+t:"")+(e?" "+e:"")}export{t as format}
+export{g as getAssetPath,r as render,s as setAssetPath,a as setNonce,b as setPlatformOptions}from"./p-BpYM--7m.js";function t(s,t,e){return(s||"")+(t?" "+t:"")+(e?" "+e:"")}export{t as format}
