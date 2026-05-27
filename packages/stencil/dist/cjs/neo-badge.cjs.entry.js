@@ -1,0 +1,24 @@
+'use strict';
+
+var index = require('./index-D0vIrhFF.js');
+
+const neoBadgeCss = () => `:host{display:block}.badge{border-radius:10px;padding:14px 16px;border:1px solid}.badge--safe{background:rgba(34, 197, 94, 0.05);border-color:rgba(34, 197, 94, 0.2)}.badge--hazardous{background:rgba(239, 68, 68, 0.05);border-color:rgba(239, 68, 68, 0.2)}.badge__header{display:flex;align-items:center;gap:8px;margin-bottom:12px}.badge__icon{font-size:16px}.badge__name{flex:1;font-size:14px;font-weight:600;color:#f1f5f9;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.badge__status{font-size:10px;font-weight:700;letter-spacing:0.05em;padding:2px 8px;border-radius:999px}.badge--safe .badge__status{background:rgba(34, 197, 94, 0.15);color:#4ade80}.badge--hazardous .badge__status{background:rgba(239, 68, 68, 0.15);color:#f87171}.badge__stats{display:grid;grid-template-columns:1fr 1fr;gap:8px}.badge__stat{display:flex;flex-direction:column;gap:2px}.badge__stat-label{font-size:10px;color:#64748b;text-transform:uppercase;letter-spacing:0.05em}.badge__stat-value{font-size:13px;font-weight:500;color:#cbd5e1}`;
+
+const NeoBadge = class {
+    constructor(hostRef) {
+        index.registerInstance(this, hostRef);
+    }
+    name;
+    hazardous = false;
+    distanceKm;
+    velocityKph;
+    formatNumber(value) {
+        return value.toLocaleString('en-US', { maximumFractionDigits: 0 });
+    }
+    render() {
+        return (index.h("div", { key: '709b7f7b2fcb48173b811115d16087d1cf488330', class: `badge ${this.hazardous ? 'badge--hazardous' : 'badge--safe'}` }, index.h("div", { key: '6470b6cb25dde1bc315d27b5c5adab3414611147', class: "badge__header" }, index.h("span", { key: '0c87be0301685837da299ad3eda3230da098def8', class: "badge__icon", "aria-hidden": "true" }, this.hazardous ? '⚠️' : '✓'), index.h("span", { key: '804bc03e7180887a6a2ad039a6b81cffd0e1aad6', class: "badge__name" }, this.name), index.h("span", { key: '90290a0ebb0d8bdd473701aa6eb4de7cdaa09fe9', class: "badge__status", "aria-label": this.hazardous ? 'Potentially hazardous' : 'Not hazardous' }, this.hazardous ? 'HAZARDOUS' : 'SAFE')), index.h("div", { key: 'f8ebca30a8a836a97b155a0199ecd0b1f5c5d131', class: "badge__stats" }, index.h("div", { key: '5de2806c341ec7e45669cbaef1aaf63c0ed70f1b', class: "badge__stat" }, index.h("span", { key: '9e767a8ae9859106c14d64cb0b20f5229649e5d7', class: "badge__stat-label" }, "Distance"), index.h("span", { key: 'e64e7250a60911e20fb25efb18f19f4e52122d3e', class: "badge__stat-value" }, this.formatNumber(this.distanceKm), " km")), index.h("div", { key: '5eb061286616cbbe82fcdd46487948e817e41a46', class: "badge__stat" }, index.h("span", { key: '8799074b556435e121f940d2458fb72b67e9d635', class: "badge__stat-label" }, "Velocity"), index.h("span", { key: '2fb13727b67fbda2b00587eea64220f7059e752d', class: "badge__stat-value" }, this.formatNumber(this.velocityKph), " km/h")))));
+    }
+};
+NeoBadge.style = neoBadgeCss();
+
+exports.neo_badge = NeoBadge;

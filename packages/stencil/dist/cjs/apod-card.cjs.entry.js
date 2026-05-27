@@ -1,0 +1,41 @@
+'use strict';
+
+var index = require('./index-D0vIrhFF.js');
+
+const apodCardCss = () => `:host{display:block}.card{background:#0f172a;border:1px solid #1e293b;border-radius:12px;overflow:hidden;cursor:pointer;outline:none;transition:border-color 0.3s, box-shadow 0.3s}.card:hover{border-color:rgba(249, 115, 22, 0.5);box-shadow:0 8px 24px rgba(249, 115, 22, 0.1)}.card:focus-visible{border-color:#f97316;box-shadow:0 0 0 2px #f97316}.image-wrapper{position:relative;aspect-ratio:16/9;overflow:hidden;background:#1e293b}.image-wrapper img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}.card:hover .image-wrapper img{transform:scale(1.05)}.badge{position:absolute;top:8px;right:8px;background:#f97316;color:white;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px}.content{padding:16px}.date{display:block;font-size:12px;color:#64748b;margin-bottom:4px}.title{margin:0;font-size:15px;font-weight:600;color:#f1f5f9;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;transition:color 0.2s}.card:hover .title{color:#fb923c}.copyright{margin:6px 0 0;font-size:11px;color:#64748b}`;
+
+const ApodCard = class {
+    constructor(hostRef) {
+        index.registerInstance(this, hostRef);
+        this.cardClick = index.createEvent(this, "cardClick");
+    }
+    imageUrl;
+    cardTitle;
+    date;
+    copyright;
+    isVideo = false;
+    cardClick;
+    handleClick = () => {
+        this.cardClick.emit({ title: this.cardTitle, date: this.date });
+    };
+    handleKeyDown = (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            this.handleClick();
+        }
+    };
+    formatDate(dateStr) {
+        const date = new Date(dateStr + 'T00:00:00');
+        return date.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+        });
+    }
+    render() {
+        return (index.h("article", { key: '7211700d6469bf5ce61cef2000d76f089ee12249', class: "card", onClick: this.handleClick, onKeyDown: this.handleKeyDown, tabIndex: 0, role: "button", "aria-label": `View details for ${this.cardTitle}` }, index.h("div", { key: 'c943f50f80913aa71890a3c7e125e4879bcaea2d', class: "image-wrapper" }, index.h("img", { key: 'fe0afe8b244eee8a021e2ccdf756bd1331e295cf', src: this.imageUrl, alt: this.cardTitle, loading: "lazy", decoding: "async" }), this.isVideo && (index.h("span", { key: '13e7b1fa73a2a85d141235a0b29d103dbbe714d9', class: "badge", "aria-label": "Video content" }, "VIDEO"))), index.h("div", { key: '29a98f6333ea98a86215b5051b7474ac3672f8cb', class: "content" }, index.h("time", { key: 'eb02d4b258dbed2baf09c1c162ed98c5aa283d22', dateTime: this.date, class: "date" }, this.formatDate(this.date)), index.h("h3", { key: '904ffab0eb3e5e2a8f02fc3208a78128f0e9e47c', class: "title" }, this.cardTitle), this.copyright && (index.h("p", { key: '76d2e13662026c11ac404ae3525a50d8da952208', class: "copyright" }, "\u00A9 ", this.copyright)))));
+    }
+};
+ApodCard.style = apodCardCss();
+
+exports.apod_card = ApodCard;
