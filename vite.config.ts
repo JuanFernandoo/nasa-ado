@@ -8,6 +8,9 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  optimizeDeps: {
+    exclude: ['nasa-ado-stencil'],
+  },
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
