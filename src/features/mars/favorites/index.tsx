@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useFavoritesStore } from '../store/favorites.store'
 import { MarsPhotoCard } from '../components/MarsPhotoCard'
 import { cn } from '@/shared/utils/cn'
+import { Star } from 'lucide-react'
 
 export default function FavoritesPage() {
     const { favorites, clearFavorites } = useFavoritesStore()
@@ -10,11 +11,11 @@ export default function FavoritesPage() {
         <div>
             <div className="mb-8 flex items-center justify-between">
                 <div>
-                    <h1 className="text-3xl font-bold text-white">My Favorites</h1>
+                    <h1 className="text-3xl font-bold text-white">Mis Favoritos</h1>
                     <p className="mt-2 text-slate-400">
                         {favorites.length === 0
-                            ? 'No favorites yet.'
-                            : `${String(favorites.length)} saved photos.`}
+                            ? 'Aún no tienes favoritos'
+                            : `${String(favorites.length)} fotos guardadas`}
                     </p>
                 </div>
 
@@ -27,23 +28,23 @@ export default function FavoritesPage() {
                             'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500',
                         )}
                     >
-                        Clear all
+                        Limpiar todo
                     </button>
                 )}
             </div>
 
             {favorites.length === 0 ? (
                 <div className="flex flex-col items-center justify-center gap-4 py-24 text-center">
-                    <span className="text-5xl" aria-hidden="true">⭐</span>
-                    <h3 className="text-lg font-semibold text-slate-300">No favorites yet</h3>
+                    <Star className="h-12 w-12 text-slate-600" aria-hidden="true" />
+                    <h3 className="text-lg font-semibold text-slate-300">Aún no tienes favoritos</h3>
                     <p className="text-sm text-slate-500">
-                        Go to Mars Rover and save some photos.
+                        Ve al Rover de marte y guarda algunas fotos.
                     </p>
                     <Link
                         to="/mars"
                         className="mt-2 rounded-lg bg-orange-500 px-6 py-2 text-sm font-medium text-white hover:bg-orange-600"
                     >
-                        Explore Mars
+                        Explora marte
                     </Link>
                 </div>
             ) : (

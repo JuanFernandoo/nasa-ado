@@ -2,13 +2,8 @@ import { createBrowserRouter } from 'react-router-dom'
 import { RootLayout } from '@/shared/components/layout/RootLayout'
 import { ErrorPage } from '@/shared/components/ui/ErrorPage'
 import { SuspenseWrapper } from './SuspenseWrapper'
-import { lazy} from 'react'
+import { ApodPage, EpicPage, FavoritesPage, MarsPage, NeoPage, StencilDemoPage } from './lazy-routers'
 
-const ApodPage = lazy(() => import('@/features/apod'))
-const MarsPage = lazy(() => import('@/features/mars'))
-const NeoPage = lazy(() => import('@/features/neo'))
-const EpicPage = lazy(() => import('@/features/epic'))
-const FavoritesPage = lazy(() => import('@/features/mars/favorites'))
 
 export const router = createBrowserRouter([
     {
@@ -39,6 +34,10 @@ export const router = createBrowserRouter([
             {
                 path: 'favorites',
                 element: <SuspenseWrapper><FavoritesPage /></SuspenseWrapper>,
+            },
+            {
+                path: 'stencil',
+                element: <SuspenseWrapper><StencilDemoPage /></SuspenseWrapper>,
             },
         ]
     }

@@ -61,9 +61,9 @@ export default function NeoPage() {
     return (
         <div>
             <div className="mb-8">
-                <h1 className="text-3xl font-bold text-white">Near Earth Objects</h1>
+                <h1 className="text-3xl font-bold text-white">Objetos Cercanos a la Tierra</h1>
                 <p className="mt-2 text-slate-400">
-                    Asteroids and comets approaching Earth tracked by NASA.
+                    Asteroides y cometas que se aproximan a la Tierra, rastreados por la NASA
                 </p>
             </div>
 
@@ -87,7 +87,7 @@ export default function NeoPage() {
                             <p className="text-2xl font-bold text-white">{String(data.length)}</p>
                         </div>
                         <div className="rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3">
-                            <p className="text-xs text-red-400">Hazardous</p>
+                            <p className="text-xs text-red-400">Peligrosos</p>
                             <p className="text-2xl font-bold text-red-400">{String(hazardousCount)}</p>
                         </div>
                     </div>

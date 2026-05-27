@@ -21,7 +21,7 @@ export async function fetchApodRange({ startDate, endDate, signal }: FetchApodPa
     const parsed = apodListSchema.safeParse(data)
 
     if (!parsed.success) {
-        console.error('❌ Invalid environment variables:')
+        console.error('Invalid environment variables:')
         console.error(JSON.stringify(z.treeifyError(parsed.error), null, 2))
         throw new Error('Invalid environment variables')
     }

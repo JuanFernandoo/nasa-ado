@@ -1,4 +1,5 @@
 import { cn } from "@/shared/utils/cn"
+import { PlayCircle } from "lucide-react"
 import type { ApodItem } from "../schemas/apod.schema"
 
 interface ApodCardProps {
@@ -6,9 +7,15 @@ interface ApodCardProps {
     onClick: (item: ApodItem) => void
 }
 
+function getYoutubeThumbnail(url: string): string | null {
+    const match = /youtube\.com\/embed\/([^?]+)/.exec(url) ??
+        /youtu\.be\/([^?]+)/.exec(url)
+    return match?.[1] ? `https://img.youtube.com/vi/${match[1]}/hqdefault.jpg` : null
+}
+
 export function ApodCard({ item, onClick }: ApodCardProps) {
     const imageUrl = item.media_type === 'video'
-        ? (item.thumbnail_url ?? '/placeholder.jpg')
+        ? (item.thumbnail_url ?? getYoutubeThumbnail(item.url) ?? null)
         : item.url
 
     return (
@@ -20,25 +27,31 @@ export function ApodCard({ item, onClick }: ApodCardProps) {
                 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500',
             )}
             onClick={() => { onClick(item) }}
-            aria-label={`View details for ${item.title}`}
-            onKeyDown={(e) => { if (e.key === 'Enter') onClick(item) }}
+            aria-label={`Ver detalles de ${item.title}`}
             tabIndex={0}
         >
             <div className="relative aspect-video overflow-hidden bg-slate-800">
-                <img
-                    src={imageUrl}
-                    alt={item.title}
-                    loading="lazy"
-                    decoding="async"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    onError={(e) => {
-                        e.currentTarget.src = 'https://via.placeholder.com/400x225?text=NASA'
-                    }}
-                />
+                {imageUrl ? (
+                    <img
+                        src={imageUrl}
+                        alt={item.title}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        onError={(e) => {
+                            e.currentTarget.style.display = 'none'
+                        }}
+                    />
+                ) : (
+                    <div className="flex h-full w-full items-center justify-center bg-slate-800">
+                        <PlayCircle className="h-16 w-16 text-slate-600 group-hover:text-orange-400 transition-colors" aria-hidden="true" />
+                    </div>
+                )}
+
                 {item.media_type === 'video' && (
                     <span
                         className="absolute right-2 top-2 rounded-full bg-orange-500 px-2 py-0.5 text-xs font-bold text-white"
-                        aria-label="Video content"
+                        aria-label="Contenido de video"
                     >
                         VIDEO
                     </span>
@@ -50,7 +63,7 @@ export function ApodCard({ item, onClick }: ApodCardProps) {
                     dateTime={item.date}
                     className="mb-1 block text-xs text-slate-500"
                 >
-                    {new Date(item.date + 'T00:00:00').toLocaleDateString('en-US', {
+                    {new Date(item.date + 'T00:00:00').toLocaleDateString('es-CO', {
                         year: 'numeric',
                         month: 'long',
                         day: 'numeric',

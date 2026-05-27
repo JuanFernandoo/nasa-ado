@@ -65,7 +65,7 @@ export function ApodModal({ item, onClose }: ApodModalProps) {
             'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500',
             'transition-colors',
           )}
-          aria-label="Close modal"
+          aria-label="Cerrar modal"
         >
           <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

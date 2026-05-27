@@ -16,14 +16,14 @@ const inputClass = cn(
 
 export function EpicFilters({ date, onDateChange, onReset }: EpicFiltersProps) {
     return (
-        <section aria-label="Filter EPIC images" className="mb-8">
+        <section aria-label="Filtro de imágenes EPIC" className="mb-8">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end">
                 <div className="flex flex-col gap-1.5">
                     <label
                         htmlFor="epic-date"
                         className="text-xs font-medium uppercase tracking-wide text-slate-400"
                     >
-                        Search by date
+                        Buscar por fechas
                     </label>
                     <input
                         id="epic-date"

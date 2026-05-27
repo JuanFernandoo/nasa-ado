@@ -1,6 +1,7 @@
 import { cn } from "@/shared/utils/cn";
 import type { NeoFilters, SortField } from "../types/neo.types";
 import { today } from "@/shared/utils/date.utils";
+import { ArrowDown, ArrowUp } from "lucide-react";
 
 interface NeoFiltersProps {
     filters: NeoFilters
@@ -16,20 +17,20 @@ const inputClass = cn(
 
 
 const SORT_OPTIONS: { value: SortField; label: string }[] = [
-    { value: 'date', label: 'Date' },
-    { value: 'name', label: 'Name' },
-    { value: 'distance', label: 'Distance' },
-    { value: 'velocity', label: 'Velocity' },
-    { value: 'diameter', label: 'Diameter' },
+    { value: 'date', label: 'Fecha' },
+    { value: 'name', label: 'Nombre' },
+    { value: 'distance', label: 'Distancia' },
+    { value: 'velocity', label: 'Velocidad' },
+    { value: 'diameter', label: 'Diámetro' },
 ]
 
 export function NeoFilters({ filters, onChange }: NeoFiltersProps) {
     return (
-        <section aria-label="Filter asteroids" className="mb-8 space-y-4">
+        <section aria-label="Filtrar asteroides" className="mb-8 space-y-4">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end">
                 <div className="flex flex-1 flex-col gap-1.5">
                     <label htmlFor="neo-start" className="text-xs font-medium uppercase tracking-wide text-slate-400">
-                        From
+                        Desde
                     </label>
                     <input
                         id="neo-start"
@@ -43,7 +44,7 @@ export function NeoFilters({ filters, onChange }: NeoFiltersProps) {
 
                 <div className="flex flex-1 flex-col gap-1.5">
                     <label htmlFor="neo-end" className="text-xs font-medium uppercase tracking-wide text-slate-400">
-                        To (max 7 days)
+                        Hasta (max 7 dias)
                     </label>
                     <input
                         id="neo-end"
@@ -57,7 +58,7 @@ export function NeoFilters({ filters, onChange }: NeoFiltersProps) {
 
                 <div className="flex flex-1 flex-col gap-1.5">
                     <label htmlFor="neo-sort" className="text-xs font-medium uppercase tracking-wide text-slate-400">
-                        Sort by
+                        Filtrar por
                     </label>
                     <select
                         id="neo-sort"
@@ -73,7 +74,7 @@ export function NeoFilters({ filters, onChange }: NeoFiltersProps) {
 
                 <div className="flex flex-1 flex-col gap-1.5">
                     <span className="text-xs font-medium uppercase tracking-wide text-slate-400">
-                        Direction
+                        Dirección
                     </span>
                     <div className="flex overflow-hidden rounded-lg border border-slate-700">
                         {(['asc', 'desc'] as const).map((dir) => (
@@ -89,8 +90,10 @@ export function NeoFilters({ filters, onChange }: NeoFiltersProps) {
                                         : 'bg-slate-900 text-slate-400 hover:bg-slate-800',
                                 )}
                             >
-                                {dir === 'asc' ? '↑ Asc' : '↓ Desc'}
-                            </button>
+                                {dir === 'asc'
+                                    ? <><ArrowUp className="inline h-3 w-3" /> Asc</>
+                                    : <><ArrowDown className="inline h-3 w-3" /> Desc</>
+                                }                            </button>
                         ))}
                     </div>
                 </div>
@@ -104,7 +107,7 @@ export function NeoFilters({ filters, onChange }: NeoFiltersProps) {
                     className="h-4 w-4 rounded border-slate-600 bg-slate-900 accent-orange-500"
                 />
                 <span className="text-sm text-slate-300">
-                    Show only potentially hazardous asteroids
+                    Mostrar solo potencialmente peligrosos
                 </span>
             </label>
         </section>

@@ -1,5 +1,6 @@
 import axios, { type AxiosInstance } from 'axios'
 import { env } from './env'
+import { ENDPOINTS } from './endpoints'
 
 function attachErrorInterceptor(client: AxiosInstance): void {
   client.interceptors.response.use(
@@ -17,7 +18,7 @@ function attachErrorInterceptor(client: AxiosInstance): void {
 }
 
 export const apiNasa = axios.create({
-  baseURL: env.VITE_NASA_BASE_URL,
+  baseURL: ENDPOINTS.NASA_BASE,
   timeout: 15000,
 })
 
@@ -32,14 +33,14 @@ apiNasa.interceptors.request.use((config) => {
 attachErrorInterceptor(apiNasa)
 
 export const marsApiClient = axios.create({
-  baseURL: env.VITE_NASA_ROVERS_URL,
+  baseURL: ENDPOINTS.MARS_BASE,
   timeout: 15000,
 })
 
 attachErrorInterceptor(marsApiClient)
 
 export const epicApiClient = axios.create({
-  baseURL: env.VITE_NASA_EPIC_URL,
+  baseURL: ENDPOINTS.EPIC_BASE,
   timeout: 15000,
 })
 

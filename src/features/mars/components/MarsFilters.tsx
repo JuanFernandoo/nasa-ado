@@ -18,7 +18,7 @@ const inputClass = cn(
 export function MarsFilters({ filters, onChange }: MarsFiltersProps) {
     const cameras = CAMERAS[filters.rover]
     return (
-        <section aria-label="Filter Mars rover photos" className="mb-8 space-y-4">
+        <section aria-label="Filtrar fotos del rover de Marte" className="mb-8 space-y-4">
             <div className="flex flex-col gap-4 sm:flex-row">
                 <div className="flex flex-1 flex-col gap-1.5">
                     <label htmlFor="rover-select" className="text-xs font-medium uppercase tracking-wide text-slate-400">
@@ -40,7 +40,7 @@ export function MarsFilters({ filters, onChange }: MarsFiltersProps) {
 
                 <div className="flex flex-1 flex-col gap-1.5">
                     <label htmlFor="camera-select" className="text-xs font-medium uppercase tracking-wide text-slate-400">
-                        Camera
+                        Camara
                     </label>
                     <select
                         id="camera-select"
@@ -58,7 +58,7 @@ export function MarsFilters({ filters, onChange }: MarsFiltersProps) {
 
                 <div className="flex flex-1 flex-col gap-1.5">
                     <span className="text-xs font-medium uppercase tracking-wide text-slate-400">
-                        Date mode
+                        Modo de fecha
                     </span>
                     <div className="flex rounded-lg border border-slate-700 overflow-hidden">
                         {(['earth', 'sol'] as DateMode[]).map((mode) => (
@@ -74,7 +74,7 @@ export function MarsFilters({ filters, onChange }: MarsFiltersProps) {
                                 )}
                                 aria-pressed={filters.dateMode === mode}
                             >
-                                {mode === 'earth' ? 'Earth Date' : 'Sol'}
+                                {mode === 'earth' ? 'Fecha de la Tierra' : 'Sol'}
                             </button>
                         ))}
                     </div>
@@ -85,7 +85,7 @@ export function MarsFilters({ filters, onChange }: MarsFiltersProps) {
                 {filters.dateMode === 'earth' ? (
                     <>
                         <label htmlFor="earth-date" className="text-xs font-medium uppercase tracking-wide text-slate-400">
-                            Earth Date
+                            Fecha de la tierra
                         </label>
                         <input
                             id="earth-date"
@@ -99,7 +99,7 @@ export function MarsFilters({ filters, onChange }: MarsFiltersProps) {
                 ) : (
                     <>
                         <label htmlFor="sol-input" className="text-xs font-medium uppercase tracking-wide text-slate-400">
-                            Sol (Martian day)
+                            Sol (día marciano)'
                         </label>
                         <input
                             id="sol-input"

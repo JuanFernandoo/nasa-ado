@@ -13,6 +13,11 @@ export default defineConfig({
       '@': resolve(__dirname, './src'),
     },
   },
+  server: {
+    fs: {
+      allow: ['..', './packages/stencil'],
+    },
+  },
   test: {
     globals: true,
     environment: 'jsdom',

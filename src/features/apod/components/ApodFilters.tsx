@@ -23,7 +23,7 @@ export function ApodFilters({ startDate, endDate, searchText, onStartDateChange,
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end">
                 <div className="flex flex-1 flex-col gap-1.5">
                     <label htmlFor="start-date" className="text-xs font-medium text-slate-400 uppercase tracking-wide">
-                        From
+                        Desde
                     </label>
                     <input
                         id="start-date"
@@ -38,7 +38,7 @@ export function ApodFilters({ startDate, endDate, searchText, onStartDateChange,
 
                 <div className="flex flex-1 flex-col gap-1.5">
                     <label htmlFor="end-date" className="text-xs font-medium text-slate-400 uppercase tracking-wide">
-                        To
+                        Hasta
                     </label>
                     <input
                         id="end-date"
@@ -53,16 +53,16 @@ export function ApodFilters({ startDate, endDate, searchText, onStartDateChange,
 
                 <div className="flex flex-2 flex-col gap-1.5">
                     <label htmlFor="search-apod" className="text-xs font-medium text-slate-400 uppercase tracking-wide">
-                        Search
+                        Buscar
                     </label>
                     <input
                         id="search-apod"
                         type="search"
                         value={searchText}
                         onChange={(e) => { onSearchChange(e.target.value) }}
-                        placeholder="Search by title or description..."
+                        placeholder="Buscar por descripción o título"
                         className={inputClass}
-                        aria-label="Search astronomy pictures"
+                        aria-label="Buscar imagenes de la Nasa"
                     />
                 </div>
             </div>

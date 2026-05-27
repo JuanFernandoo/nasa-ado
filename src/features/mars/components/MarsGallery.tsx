@@ -1,3 +1,4 @@
+import { CircleDot } from "lucide-react";
 import type { MarsPhoto } from "../schemas/mars.schema";
 import { MarsPhotoCard } from "./MarsPhotoCard";
 
@@ -9,19 +10,19 @@ export function MarsGallery({ photos }: MarsGalleryProps) {
     if (photos.length === 0) {
         return (
             <div className="flex flex-col items-center justify-center gap-4 py-24 text-center">
-                <span className="text-5xl" aria-hidden="true">🔴</span>
-                <h3 className="text-lg font-semibold text-slate-300">No photos found</h3>
+                <CircleDot className="h-12 w-12 text-slate-600" aria-hidden="true" />
+                <h3 className="text-lg font-semibold text-slate-300">No se encontraron fotos</h3>
                 <p className="text-sm text-slate-500">
-                    Try a different rover, camera, or date.
+                   Intenta con otro rover, cámara o fecha
                 </p>
             </div>
         )
     }
 
     return (
-        <section aria-label={`${String(photos.length)} Mars rover photos`}>
+        <section aria-label={`${String(photos.length)} Fotos del rover de marte`}>
             <p className="mb-4 text-sm text-slate-500">
-                Showing <span className="font-medium text-slate-300">{String(photos.length)}</span> photos
+                Mostrando <span className="font-medium text-slate-300">{String(photos.length)}</span> fotos
             </p>
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
                 {photos.map((photo) => (

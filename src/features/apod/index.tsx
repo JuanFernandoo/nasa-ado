@@ -34,10 +34,10 @@ export default function ApodPage() {
         <div>
             <div className="mb-8">
                 <h1 className="text-3xl font-bold text-white">
-                    Astronomy Picture of the Day
+                    Foto de la Nasa del Día
                 </h1>
                 <p className="mt-2 text-slate-400">
-                    Explore NASA's daily astronomy images and videos.
+                    Mira las imágenes y videos diarios de la NASA.
                 </p>
             </div>
 
@@ -58,10 +58,10 @@ export default function ApodPage() {
                     className="rounded-xl border border-red-500/30 bg-red-500/10 p-6 text-center"
                 >
                     <p className="text-red-400">
-                        {error instanceof Error ? error.message : 'Failed to load pictures.'}
+                        {error instanceof Error ? error.message : 'Error al cargar las imagenes'}
                     </p>
                     <p className="mt-1 text-sm text-slate-500">
-                        React Query will retry automatically.
+                        Se intentará nuevamente
                     </p>
                 </div>
             )}

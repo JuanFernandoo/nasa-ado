@@ -1,3 +1,4 @@
+import { Telescope } from 'lucide-react'
 import type { ApodItem } from '../schemas/apod.schema'
 import { ApodCard } from './ApodCard'
 
@@ -10,17 +11,17 @@ export function ApodGallery({ items, onSelectItem }: ApodGalleryProps) {
     if (items.length === 0) {
         return (
             <div className="flex flex-col items-center justify-center gap-4 py-24 text-center">
-                <span className="text-5xl" aria-hidden="true">🔭</span>
-                <h3 className="text-lg font-semibold text-slate-300">No pictures found</h3>
-                <p className="text-sm text-slate-500">Try adjusting the date range or search terms.</p>
+                <Telescope className="h-12 w-12 text-slate-600" aria-hidden="true" />
+                <h3 className="text-lg font-semibold text-slate-300">No se encontraron imagenes</h3>
+                <p className="text-sm text-slate-500">Trata de cambiarel rango de fechas o los términos de búsqueda.</p>
             </div>
         )
     }
 
     return (
-        <section aria-label={`${String(items.length)} astronomy pictures`}>
+        <section aria-label={`${String(items.length)} imagenes de la nasa`}>
             <p className="mb-4 text-sm text-slate-500">
-                Showing <span className="font-medium text-slate-300">{items.length}</span> pictures
+                Mostrando <span className="font-medium text-slate-300">{items.length}</span> imagenes
             </p>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {items.map((item) => (

@@ -12,9 +12,9 @@ export default function EpicPage() {
     return (
         <div>
             <div className="mb-8">
-                <h1 className="text-3xl font-bold text-white">EPIC Earth Images</h1>
+                <h1 className="text-3xl font-bold text-white">Imagenes EPIC de la tierra</h1>
                 <p className="mt-2 text-slate-400">
-                    Full-disc natural color images of Earth from the DSCOVR satellite.
+                    Imágenes en color natural de la Tierra desde el satélite DSCOVR.
                 </p>
             </div>
 
@@ -32,7 +32,7 @@ export default function EpicPage() {
                     className="rounded-xl border border-red-500/30 bg-red-500/10 p-6 text-center"
                 >
                     <p className="text-red-400">
-                        {error instanceof Error ? error.message : 'Failed to load EPIC images.'}
+                        {error instanceof Error ? error.message : 'Error al cargar las imágenes EPIC'}
                     </p>
                 </div>
             )}

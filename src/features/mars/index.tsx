@@ -7,6 +7,7 @@ import { useFavoritesStore } from './store/favorites.store'
 import type { MarsFilters as MarsFiltersType } from './types/mars.types'
 import { cn } from '@/shared/utils/cn'
 import { MarsFilters } from './components/MarsFilters'
+import { Star } from 'lucide-react'
 
 const DEFAULT_FILTERS: MarsFiltersType = {
     rover: 'curiosity',
@@ -33,9 +34,9 @@ export default function MarsPage() {
         <div>
             <div className="mb-8 flex items-start justify-between">
                 <div>
-                    <h1 className="text-3xl font-bold text-white">Mars Rover Photos</h1>
+                    <h1 className="text-3xl font-bold text-white">Fotos del rover de marte</h1>
                     <p className="mt-2 text-slate-400">
-                        Explore photos taken by NASA's Mars rovers.
+                        Descubre las fotos tomadas por los rovers en marte
                     </p>
                 </div>
 
@@ -47,10 +48,10 @@ export default function MarsPage() {
                         'hover:border-orange-500 hover:text-orange-400',
                         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500',
                     )}
-                    aria-label={`View ${String(favoritesCount)} favorites`}
+                    aria-label={`Ver ${String(favoritesCount)} favoritos`}
                 >
-                    <span aria-hidden="true">⭐</span>
-                    <span>Favorites ({String(favoritesCount)})</span>
+                    <Star className="h-4 w-4" aria-hidden="true" />
+                    <span>Favoritos ({String(favoritesCount)})</span>
                 </Link>
             </div>
 
@@ -61,7 +62,7 @@ export default function MarsPage() {
             {isError && (
                 <div role="alert" className="rounded-xl border border-red-500/30 bg-red-500/10 p-6 text-center">
                     <p className="text-red-400">
-                        {error instanceof Error ? error.message : 'Failed to load photos.'}
+                        {error instanceof Error ? error.message : 'Error al cargar las fotos'}
                     </p>
                 </div>
             )}

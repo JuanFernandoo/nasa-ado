@@ -1,3 +1,4 @@
+import { Earth } from 'lucide-react'
 import type { EpicImage } from '../schemas/epic.schema'
 import { EpicCard } from './EpicCard'
 
@@ -9,21 +10,21 @@ export function EpicGallery({ images }: EpicGalleryProps) {
     if (images.length === 0) {
         return (
             <div className="flex flex-col items-center justify-center gap-4 py-24 text-center">
-                <span className="text-5xl" aria-hidden="true">🌍</span>
-                <h3 className="text-lg font-semibold text-slate-300">No images found</h3>
+                <Earth className="h-12 w-12 text-slate-600" aria-hidden="true" />
+                <h3 className="text-lg font-semibold text-slate-300">No se encontraron imagenes</h3>
                 <p className="text-sm text-slate-500">
-                    Try a different date. EPIC images are available from June 2015 onwards.
+                    Trata con otra fecha, Las imágenes EPIC están disponibles desde junio de 2015
                 </p>
             </div>
         )
     }
 
     return (
-        <section aria-label={`${String(images.length)} EPIC Earth images`}>
+        <section aria-label={`${String(images.length)} imágenes EPIC de la Tierra`}>
             <p className="mb-4 text-sm text-slate-500">
-                Showing{' '}
+                Mostrando{' '}
                 <span className="font-medium text-slate-300">{String(images.length)}</span>{' '}
-                images
+                imagenes
             </p>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {images.map((image) => (
